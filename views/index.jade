@@ -1,0 +1,33 @@
+script(type='text/javascript', src='/javascripts/jquery.js')
+script(type='text/javascript', src='/javascripts/jquery.jstree.js')
+h1= title
+p Welcome to #{title}
+p Testing the Jade
+
+#tree
+
+script
+  jQuery("#tree")
+    .jstree({
+        "json-data" : {
+          "data" : [
+            {
+                "data" : "A node",
+                "metadata" : { id : 23 },
+                "children" : [ "Child 1", "A Child 2" ]
+            },
+            {
+                "attr" : { "id" : "li.node.id1" },
+                "data" : {
+                    "title" : "Long format demo",
+                    "attr" : { "href" : "#" }
+                }
+            }
+          ]
+
+        },
+        "plugins" : [ "json-data" ]
+    }).bind("select_node.jstree",
+      function (e, data) {
+        alert(jQuery.data(data.rslt.obj[0], "jstree").id)
+      });
