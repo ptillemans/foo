@@ -44,7 +44,7 @@ app.get('/assets', function(req, res){
     + '  <item id="' + id + '_2" state="closed">'
     + '    <content><name>node ' + id + '_2 </name></content>'
     + '  </item>'
-    + '  <item id="' + id + '_3" state="open">'
+    + '  <item id="' + id + '_3">'
     + '    <content><name>node ' + id + '_3 </name></content>'
     + '  </item>'
     + '</root>'
