@@ -1,11 +1,10 @@
-
 /**
  * Module dependencies.
  */
 
 var express = require('express');
 
-var app = module.exports = express.createServer();
+var app = module.exports = express();
 
 // Configuration
 
@@ -83,6 +82,6 @@ app.get('/', function(req, res){
 // Only listen on $ node app.js
 
 if (!module.parent) {
-  app.listen(3000);
-  console.log("Express server listening on port %d", app.address().port);
+  app.listen(3000, "localhost");
+  console.log("Express server listening on port %d", 3000);
 }
